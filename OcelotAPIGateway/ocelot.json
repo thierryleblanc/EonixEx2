@@ -1,0 +1,50 @@
+{
+  "Routes": [
+    {
+      //internal microservice
+      "DownstreamPathTemplate": "/api/Person",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          //"Port": 80
+          "Port": 44370
+        }
+      ],
+      //internal expose microservice
+      "UpstreamPathTemplate": "/PersonService",
+      "UpstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          //"Port": 80
+          "Port": 44371
+        }
+      ],
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      //internal microservice
+      "DownstreamPathTemplate": "/api/Person/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          //"Port": 80
+          "Port": 44370
+        }
+      ],
+      //internal expose microservice
+      "UpstreamPathTemplate": "/PersonService/{id}",
+      "UpstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          //"Port": 80
+          "Port": 44371
+        }
+      ],
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    }
+  ]
+}
+
+
